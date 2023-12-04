@@ -6,7 +6,7 @@ AddType application/rdf+xml .rdf
 AddType application/rdf+xml .owl
 # Rewrite engine setup
 RewriteEngine On
-RewriteBase /def
+RewriteBase /pizzaonto
 # Rewrite rule 1: to serve HTML content from the namespace URI if requested
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
