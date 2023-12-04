@@ -5,26 +5,26 @@ Options -MultiViews
 AddType application/rdf+xml .owl
 # Rewrite engine setup
 RewriteEngine On
-RewriteBase /ontology
+RewriteBase /pizzaonto
 # Rewrite rule 1: to serve HTML content from the namespace URI if requested
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^ontology1/$ ontology1-content/ontology1-docs/index.html [R=303]
+RewriteRule ^ontology1/$ pizzacontent/ontodocs/index.html [R=303]
 # Rewrite rule 2: to serve HTML content from class or prop URIs if requested
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^ontology1/(.+) ontology1-content/ontology1-docs/$1.html [R=303]
+RewriteRule ^ontology1/(.+) pizzacontent/ontodocs/$1.html [R=303]
 # Rewrite rule 3: to serve RDF content is requested
 RewriteCond %{HTTP_ACCEPT} application/rdf\+xml
-RewriteRule ^ontology1/ ontology1-content/myOnto.owl [R=303]
+RewriteRule ^ontology1/ pizzacontent/pizza6x.owl [R=303]
 # Choose the default response
 # ---------------------------
 # Rewrite rule 4: to serve RDF/XML content by default
-RewriteRule ^ontology1/ ontology1-content/myOnto.owl [R=303]
+RewriteRule ^ontology1/ pizzacontent/pizza6x.owl [R=303]
 # Rewrite rules to serve HTML content by default (disabled)
 # (To enable this option, uncomment the two rewrite rules below,
 # and comment out the rewrite rule directly above)
